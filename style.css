@@ -1,0 +1,28 @@
+body {
+  font-family: helvetica neue;
+  background-color: aliceblue;
+}
+#example {
+  padding: 100px;
+  background: #ff0000;
+  color: white;
+  font-size: 36px;
+  margin-top: 2%;
+  border-radius: 10%;
+}
+
+.colorcont{
+  margin-top: 10%;
+}
+
+#m{
+  color:red;
+}
+
+#l{
+  color:green;
+}
+
+#c{
+  color:blue;
+}
