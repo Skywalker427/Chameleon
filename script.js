@@ -1,18 +1,21 @@
+"use strict"
 const input = document.querySelector("input")
 const example = document.querySelector("#example")
 
-//INSTANTIATE AND TRAIN NEURAL NETWORK
-const network = new brain.NeuralNetwork()
-  
-  network.train([
-    { input: { r: 0.62, g: 0.72, b: 0.88 }, output: { light: 1 } },
-    { input: { r: 0.1, g: 0.84, b: 0.72 }, output: { light: 1 } },
-    { input: { r: 0.33, g: 0.24, b: 0.29 }, output: { dark: 1 } },
-    { input: { r: 0.74, g: 0.78, b: 0.86 }, output: { light: 1 } },
-    { input: { r: 0.31, g: 0.35, b: 0.41 }, output: { dark: 1 } },
-    { input: {r: 1, g: 0.99, b: 0}, output: { light: 1 } },
-    { input: {r: 1, g: 0.42, b: 0.52}, output: { dark: 1 } },
-  ])
+//INSTANTIATE NEURAL NETWORK
+const network = new brain.NeuralNetwork();
+
+
+//TRAIN NEURAL NETWORK 
+network.train([
+  { input: { r: 0.62, g: 0.72, b: 0.88 }, output: { light: 1 } },
+  { input: { r: 0.1, g: 0.84, b: 0.72 }, output: { light: 1 } },
+  { input: { r: 0.33, g: 0.24, b: 0.29 }, output: { dark: 1 } },
+  { input: { r: 0.74, g: 0.78, b: 0.86 }, output: { light: 1 } },
+  { input: { r: 0.31, g: 0.35, b: 0.41 }, output: { dark: 1 } },
+  { input: { r: 1, g: 0.99, b: 0 }, output: { light: 1 } },
+  { input: { r: 1, g: 0.42, b: 0.52 }, output: { dark: 1 } },
+])
 
 //LISTEN FOR COLOR CHANGES AND RUN NEURAL NETWORK
 input.addEventListener("change", (e) => {
@@ -25,6 +28,7 @@ input.addEventListener("change", (e) => {
   example.style.color = result === "dark" ? "white" : "black"
 })
 
+//CONVERT HEX COLORS TO RGB
 function getRgb(hex) {
   var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, function(m, r, g, b) {
