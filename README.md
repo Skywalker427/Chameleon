@@ -1,5 +1,5 @@
 # Chameleon
-Detect light and dark background colours with machine learning.
+### *Detect light and dark background colours with machine learning.*
 
 A common UI and typography problem is detecting dynamic backgrounds as light or dark and setting the foreground text to an appropriate visible colour.
 
